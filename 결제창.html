@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★외계인 상점★ 결제</title>
+    <style>
+        body {
+            background-color: blue;
+            font-family: monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ff0404;
+        }
+        form {
+            align-items: center;
+            padding: 20px;
+        }
+        input {
+            margin: 10px auto;
+            padding: 10px;
+            width: 500px;
+        }
+        button {
+            padding: 10px 200px;
+            cursor: pointer;
+            background-color: yellow;
+            margin: 10px; /* 버튼 간격 추가 */
+            border-color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>결제하다</h1>
+    <form id="paymentForm">
+        <input type="text" id="name" placeholder="이름을 쓰다" required />
+        <input type="text" id="address" placeholder="주소를 입력하다" required />
+        <button type="button" onclick="alert('오로지 무통장 입금')">결제수단</button>
+        <button type="button" onclick="processPayment()">결제하다</button>
+    </form>
+
+    <script>
+        function processPayment() {
+            const name = document.getElementById("name").value.trim();
+            const address = document.getElementById("address").value.trim();
+
+            if (!name) {
+                alert("이름이 비다.");
+                return;
+            }
+            if (!address) {
+                alert("주소가 비다.");
+                return;
+            }
+
+            alert("이용해 주셔서 감사합니다.");
+            window.location.href = "http://naver.com/";
+        }
+    </script>
+</body>
+</html>
